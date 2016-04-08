@@ -12,8 +12,7 @@ public class ProductBuffer {
 	ArrayList<String> buffer = new ArrayList<String>();
 	
 	synchronized void addProduct(String product){
-		if(full()){
-			System.out.println("\nfull");
+		while(full()){
 			try {
 				wait();
 			} catch (InterruptedException e) {
@@ -22,12 +21,11 @@ public class ProductBuffer {
 		}
 		buffer.add(product);
 		System.out.println(product + " added");
-		notify();
+		notifyAll();
 	}
 	
 	synchronized String getProduct(int i){
-		if(empty()){
-			System.out.println("\nempty");
+		while(empty()){
 			try {
 				wait();
 			} catch (InterruptedException e) {
@@ -35,7 +33,7 @@ public class ProductBuffer {
 			}
 		}
 		 String elem =buffer.remove(buffer.lastIndexOf("Product "));
-		 notify();
+		 notifyAll();
 		 return elem;
 		
 	}
