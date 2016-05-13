@@ -15,3 +15,14 @@ lab3 - Semaphores and locks to solve producers/ consumers problem with limited b
 - locks and condition variables usage (adding/ removing random number of elements from bufer avoiding starvation)
 
 lab4 - Executor pattern
+- usage of Executor while evaluating Mandelbrot Set 
+- usage of Executor while downloading URLs
+ 
+lab5 - Node.js
+
+lab6 - Node.js
+
+lab7 - Scala basics
+
+lab8 - Scala Futures
+
